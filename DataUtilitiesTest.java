@@ -13,8 +13,6 @@ import org.junit.*;
 
 
 public class DataUtilitiesTest {
-
-	
 	
 	//START TEST CASES FOR METHOD 1 - calculateColumnTotal
 	//testing using mocking
@@ -54,32 +52,32 @@ public class DataUtilitiesTest {
 	 //MOCKING -> Mocking Does not allow us to use this test, 
 	 //When testing an invalid input, using mocking throws an error as it does not
 	 //exist in the mocked table we created
-// @Test
-//	 public void calculateColumnTotalInvalidColumn() {
-//	     Mockery mockingContext = new Mockery();
-//	     final Values2D valuesNew = mockingContext.mock(Values2D.class);
-//	     mockingContext.checking(new Expectations() {
-//	         {
-//	             allowing(valuesNew).getRowCount();
-//	             will(returnValue(5));
-//	             allowing(valuesNew).getValue(0, 0);
-//	             will(returnValue(7.5));
-//	             allowing(valuesNew).getValue(1, 0);
-//	             will(returnValue(2.5));
-//	         }
-//	     });
-//	     
-//	     
-//	     //    Sending a negative column number (invalid)        
-//	     double result = DataUtilities.calculateColumnTotal(valuesNew, -5);
-//	     
-//	     //    Return Value should be 0
-//	     assertEquals(result, 0, 0.000000001d);
-// }
+	// @Test
+	//	 public void calculateColumnTotalInvalidColumn() {
+	//	     Mockery mockingContext = new Mockery();
+	//	     final Values2D valuesNew = mockingContext.mock(Values2D.class);
+	//	     mockingContext.checking(new Expectations() {
+	//	         {
+	//	             allowing(valuesNew).getRowCount();
+	//	             will(returnValue(5));
+	//	             allowing(valuesNew).getValue(0, 0);
+	//	             will(returnValue(7.5));
+	//	             allowing(valuesNew).getValue(1, 0);
+	//	             will(returnValue(2.5));
+	//	         }
+	//	     });
+	//	     
+	//	     
+	//	     //    Sending a negative column number (invalid)        
+	//	     double result = DataUtilities.calculateColumnTotal(valuesNew, -5);
+	//	     
+	//	     //    Return Value should be 0
+	//	     assertEquals(result, 0, 0.000000001d);
+	// }
  
-// END OF TEST CASES FOR METHOD 1
+	// END OF TEST CASES FOR METHOD 1
  
- //Start of Test Cases for METHOD 2
+ 	//Start of Test Cases for METHOD 2
 	
 	//Using mocking to simulate to a table
 	@Test
@@ -112,35 +110,35 @@ public class DataUtilitiesTest {
         	double result = DataUtilities.calculateRowTotal(values, 0);
     	}
 	
-//	@Test TEST DOES NOT WORK BECAUSE OF MOCKING -> Mocking Does not allow us to use
-	//When testing an invalid input, using mocking throws an error as it does not
-	//exist in the mocked table we created
-//	public void test3calculateRowTotal() {
-//		Mockery mockingContext = new Mockery();
-//	    final Values2D valuesNew = mockingContext.mock(Values2D.class);
-//	    mockingContext.checking(new Expectations() {
-//	        {
-//	        
-//	        	double[] coloumns = {7.5,2.5};
-//	            allowing(valuesNew).getColumnCount();
-//	            will(returnValue(2));
-//	            for(int i = 0; i < coloumns.length; i++) {
-//	            	allowing(valuesNew).getValue(0, i);
-//	            	will(returnValue(coloumns[i]));
-//	            }
-//	            allowing(valuesNew).getColumnCount();
-//	            will(returnValue(2));
-//	        }
-//	    });
-//	    double result = DataUtilities.calculateRowTotal(valuesNew, -1);
-//	    // verify
-//	    assertEquals(result, 0, .000000001d);
-//	}
-//	
+	//	@Test TEST DOES NOT WORK BECAUSE OF MOCKING -> Mocking Does not allow us to use
+		//When testing an invalid input, using mocking throws an error as it does not
+		//exist in the mocked table we created
+	//	public void test3calculateRowTotal() {
+	//		Mockery mockingContext = new Mockery();
+	//	    final Values2D valuesNew = mockingContext.mock(Values2D.class);
+	//	    mockingContext.checking(new Expectations() {
+	//	        {
+	//	        
+	//	        	double[] coloumns = {7.5,2.5};
+	//	            allowing(valuesNew).getColumnCount();
+	//	            will(returnValue(2));
+	//	            for(int i = 0; i < coloumns.length; i++) {
+	//	            	allowing(valuesNew).getValue(0, i);
+	//	            	will(returnValue(coloumns[i]));
+	//	            }
+	//	            allowing(valuesNew).getColumnCount();
+	//	            will(returnValue(2));
+	//	        }
+	//	    });
+	//	    double result = DataUtilities.calculateRowTotal(valuesNew, -1);
+	//	    // verify
+	//	    assertEquals(result, 0, .000000001d);
+	//	}
+	//	
 	
-//End of Test Cases for METHOD 2
+	//End of Test Cases for METHOD 2
 
-// START TEST CASES FOR METHOD 3 - createNumberArray
+	// START TEST CASES FOR METHOD 3 - createNumberArray
 	 
 	//testing using valid double values within array
 	 @Test
@@ -159,9 +157,9 @@ public class DataUtilitiesTest {
 	     java.lang.Number[] result = DataUtilities.createNumberArray(data);
 	 }
 	 
-//END of test cases for method 3
-	 
-//START of test cases for method 4
+	//END of test cases for method 3
+
+	//START of test cases for method 4
 	//Test for number array with double values -> Number Array 
 	@Test
 	public void test1PasscreateNumberArray2D(){
@@ -179,9 +177,9 @@ public class DataUtilitiesTest {
 		assertTrue(result instanceof Number[][]);
 	}
 	
-//END of test cases for METHOD 4
-	
-//START of test cases for METHOD 5
+	//END of test cases for METHOD 4
+
+	//START of test cases for METHOD 5
 	//Test cumulative percentage, using mocking
 	@Test
 	public void getCumulativePercentagesTest() {
@@ -221,5 +219,5 @@ public class DataUtilitiesTest {
 		KeyedValues result = DataUtilities.getCumulativePercentages(valuesKey);
 	}
 	
-//END of test cases for METHOD 5
+	//END of test cases for METHOD 5
 }
