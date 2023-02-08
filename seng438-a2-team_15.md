@@ -7,7 +7,7 @@
 |   Student Names: |     |
 |    Sajan Hayer   |     |
 |   Manraj Singh   |     |
-|    Noor Nawaz    |     |
+|    Noor Nawaz    |  30118937   |
 | Ahmad Elshiltawi |  30123883   |
 
 # 1 Introduction
@@ -59,3 +59,5 @@ Initially, all group members worked together to read documentation and gain a de
 A challenge that was encountered during this lab was we realized that mocking would not allow us to fully implement some of the tests we had thought of. This was because when we tried to send a invalid value to the function, the code would throw an error stating that the value did not exist within our mocked table. The solution would be to add the specified value (row or column) within our table but that would result in the test passing. This resulted in our group having to remove these tests (these are commented out in our code). 
 
 # 6 Comments/feedback on the lab itself
+This lab was more enjoyable than the previous lab. It was interesting to learn about automated testing using code, and how the Junit framework allows testers to develop and execute a test suite fairly efficiently. It was also interesting to learn about Mocking and how the jMock framework can be used to mock objects of different classes. The instructions were very thorough and allowed us to gain a good understanding of how to design unit tests, along with package structure. 
+
