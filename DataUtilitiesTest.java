@@ -20,7 +20,7 @@ public class DataUtilitiesTest {
 	//testing using mocking
 	@Test
 	public void calculateColumnTotalFiveValues() {
-		//setup for mocking 
+	//setup for mocking 
 	    Mockery mockingContext = new Mockery();
 	    final Values2D values = mockingContext.mock(Values2D.class);
 	    mockingContext.checking(new Expectations() {
@@ -41,16 +41,16 @@ public class DataUtilitiesTest {
 	     //testing the result we get with the expected result
 	     double result = DataUtilities.calculateColumnTotal(values, 0);
 	     assertEquals(result, 23.5, 0.000000001d);
- }    
+ 	}    
 	//Testing using table that has null value
-	 @Test (expected = InvalidParameterException.class)
-	 public void calculateColumnTotalInvalidTable() {
+ 	@Test (expected = InvalidParameterException.class)
+ 	public void calculateColumnTotalInvalidTable() {
 	     final Values2D values = null;
 	     double result = DataUtilities.calculateColumnTotal(values, 0);
-	 }
+ 	}
 	 
 	 
-	 // TEST DOES NOT WORK BECAUSE OF 
+ 	 //TEST DOES NOT WORK BECAUSE OF 
 	 //MOCKING -> Mocking Does not allow us to use this test, 
 	 //When testing an invalid input, using mocking throws an error as it does not
 	 //exist in the mocked table we created
@@ -87,18 +87,18 @@ public class DataUtilitiesTest {
 		
 		//create mocking table 
 		Mockery mockingContext = new Mockery();
-	    final Values2D values = mockingContext.mock(Values2D.class);
-	    mockingContext.checking(new Expectations() {
-	        {
-	        	//set amount of columns (2 columns, 1 row)
-	            one(values).getColumnCount();
-	            will(returnValue(2));
-	            //create values within the table
-	            one(values).getValue(0, 0);
-	            will(returnValue(7.0));
-	            one(values).getValue(0, 1);
-	            will(returnValue(2.5));
-	        }
+	    	final Values2D values = mockingContext.mock(Values2D.class);
+	    	mockingContext.checking(new Expectations() {
+		{
+		//set amount of columns (2 columns, 1 row)
+		    one(values).getColumnCount();
+		    will(returnValue(2));
+		    //create values within the table
+		    one(values).getValue(0, 0);
+		    will(returnValue(7.0));
+		    one(values).getValue(0, 1);
+		    will(returnValue(2.5));
+		}
 	    });
 	    //send to function and verify
 	    double result = DataUtilities.calculateRowTotal(values, 0);
@@ -107,10 +107,10 @@ public class DataUtilitiesTest {
 	
 	//Test to check for correct exception thrown, 
 	@Test (expected = InvalidParameterException.class)
-    public void test2calculateRowTotal() {
-        final Values2D values = null;
-        double result = DataUtilities.calculateRowTotal(values, 0);
-    }
+    	public void test2calculateRowTotal() {
+        	final Values2D values = null;
+        	double result = DataUtilities.calculateRowTotal(values, 0);
+    	}
 	
 //	@Test TEST DOES NOT WORK BECAUSE OF MOCKING -> Mocking Does not allow us to use
 	//When testing an invalid input, using mocking throws an error as it does not
@@ -216,7 +216,7 @@ public class DataUtilitiesTest {
 	
 	//testing percentage using NULL object 
 	@Test (expected = InvalidParameterException.class)
-    public void getCumulativePercentagesTestFail() {
+    	public void getCumulativePercentagesTestFail() {
 		KeyedValues valuesKey = null;
 		KeyedValues result = DataUtilities.getCumulativePercentages(valuesKey);
 	}
