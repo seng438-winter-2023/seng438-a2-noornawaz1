@@ -8,7 +8,7 @@
 |    Sajan Hayer   |     |
 |   Manraj Singh   |     |
 |    Noor Nawaz    |     |
-| Ahmad Elshiltawi |     |
+| Ahmad Elshiltawi |  30123883   |
 
 # 1 Introduction
 In this lab, we were asked to develop tests in the JUnit framework for two given classes: Range and DataUtilties. By doing so, we were able to develop a good understanding of automated unit testing through JUnit. Since we were only provided with JAR files and no source code, we had to execute black-box testing methods such as equivalence testing when designing a test suite. For the Range class, we tested the methods constrain(), contains(), shift(), intersects(), combine(), getUpperBound(), and getLowerBound(). We began testing by first documenting the functionalities of each method and then constructing tests that would verify that the value returned by the methods was equivalent to the one that we hardcoded. For testing the DataUtilties() class, we tested the methods calculateColumnTotal(), calculateRowTotal(), createNumberArray(), createNumberArray2D(), and getCumilativePercentages(). These methods use the interfaces Values2D and KeyedValues so we had to utilize mocking objects in order to complete thorough and accurate testing. We examined the methods functionalities and hardcoded values that the methods would return if they were operating correctly. Once we ran the method, we compared it to the values produced by the test. Additionally, we constructed tests to ensure that the correct exceptions were thrown. The results of all the tests were recorded in Figure 1. 
