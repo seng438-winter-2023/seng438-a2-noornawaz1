@@ -2,37 +2,59 @@
 
 **Lab. Report \#2 – Requirements-Based Test Generation**
 
-| Group \#:      |     |
-| -------------- | --- |
-| Student Names: |     |
-|                |     |
-|                |     |
-|                |     |
+|   Group \#:      |     |
+| ---------------- | --- |
+|   Student Names: |     |
+|    Sajan Hayer   |     |
+|   Manraj Singh   |     |
+|    Noor Nawaz    |     |
+| Ahmad Elshiltawi |     |
 
 # 1 Introduction
-
-Text…
+In this lab, we were asked to develop tests in the JUnit framework for two given classes: Range and DataUtilties. By doing so, we were able to develop a good understanding of automated unit testing through JUnit. Since we were only provided with JAR files and no source code, we had to execute black-box testing methods such as equivalence testing when designing a test suite. For the Range class, we tested the methods constrain(), contains(), shift(), intersects(), combine(), getUpperBound(), and getLowerBound(). We began testing by first documenting the functionalities of each method and then constructing tests that would verify that the value returned by the methods was equivalent to the one that we hardcoded. For testing the DataUtilties() class, we tested the methods calculateColumnTotal(), calculateRowTotal(), createNumberArray(), createNumberArray2D(), and getCumilativePercentages(). These methods use the interfaces Values2D and KeyedValues so we had to utilize mocking objects in order to complete thorough and accurate testing. We examined the methods functionalities and hardcoded values that the methods would return if they were operating correctly. Once we ran the method, we compared it to the values produced by the test. Additionally, we constructed tests to ensure that the correct exceptions were thrown. The results of all the tests were recorded in Figure 1. 
 
 # 2 Detailed description of unit test strategy
+To test the Range and DataUtilities classes using the black-box testing method, we further used equivalence testing to develop test cases. Equivalence testing allows us to test a single unit (generally a class) by separating the possible inputs into subgroups that have the same/similar input. Equivalence classes are evaluated based on the input conditions. 
 
-// including the input partitions you have designed
+All group members initially familiarized themselves with the SUT, and read the provided Javadoc documentation about the classes that were to be tested. All members read the documentation for each method in a class and identified the return type, parameters and description of the method to understand functionality. We also noted if the function threw any exceptions based on certain input. By determining the function parameters, we designed test cases based on input values that were valid (correct data/object type) and invalid (null, incorrect type etc.). When valid input was provided, we tested if the methods had the appropriate return type, along with appropriate values for results. When invalid input was provided, we verified if the methods threw the correct exceptions and if they handled errors correctly as outlined in the documentation.  
+
+The test suite that targeted the methods of the Range class also consisted of test cases that were developed using Boundary Value Testing. By developing test cases using this method, we were able to identify a range of inputs that were valid for the methods, which further allowed us to identify boundary values that are not acceptable by the methods being tested. Boundary Value Testing also allowed us to reduce the number of test cases required, as it was easy to identify a range of valid input, and their associated invalid boundaries. 
+
+Black box testing allowed us to focus on the core functionality of the system without thoroughly considering the internal code and inner works of the SUT. This allowed us to test a system from end-to-end and put us in the shoes of regular users that use the application.
 
 # 3 Test cases developed
+Figure 1: Results of Testing
+| Class | Function | Test description | Pass/Fail |
+|---------|-------|---------|---------|
+| org.jfree.Range | contains | Testing a positive number that is inside the range| Pass |
+| org.jfree.Range | contains | Testing a negative number that is inside the range| Pass |
+| org.jfree.Range | contains | Testing a positive number that is outside the range| Pass |
+| org.jfree.Range | contains | Testing a negative number that is outside the range| Pass |
+| org.jfree.Range | intersects | Testing a smaller range that is within the original range completely | Pass |
+| org.jfree.Range | intersects | Testing a range that is within the range from the upper bound’s side | Pass |
+| org.jfree.Range | intersects | Testing a range that is within the range from the lower bound’s side | Failed:java.lang.AssertionError |
+| org.jfree.Range | intersects | Testing a bigger range that encapsulates the original range completely | Pass |
+| org.jfree.Range | intersects | Testing a range that does not intersect the original range | Pass |
+| org.jfree.Range | combine | Testing combining two initialized ranges | Failed:java.lang.AssertionError: Range 1 is (-3, 3), Range_2 is (-4, 5), the upper bound should be 5.0 expected:<5.0> but was:<-4.0> |
+| org.jfree.Range | combine |Testing combining one initialized range and null range | Failed:java.lang.AssertionError: Range 1 is (-3, 3), Range_2 is null, the upper bound should be 3. expected:<3.0> but was:<-3.0> |
+| org.jfree.Range | combine | Testing combining two null ranges | Pass |
+| org.jfree.Range | getLowerBound | Testing the value returned| Pass |
+| org.jfree.Range | getUpperBound | Testing the value returned| Failed:java.lang.AssertionError: expected:<1.0> but was:<-1.0> |
+| org.jfree.DataUtilities | calculateColumnTotal | Using Mocking, testing if a valid column within a table will return the correct amount (sum of all column values) | Pass |
+| org.jfree.DataUtilities | calculateColumnTotal | Testing using a null object | Failed: Expected a InvalidParemeterException function returned a NullPointerException |
+| org.jfree.DataUtilities | calculateRowTotal | Using Mocking testing if the sum of valid row within a table returns the correct value | Failed: Expected 9.5 but function returned 7.0|
+| org.jfree.DataUtilities | calculateRowTotal | Testing using a null object | Failed:  Expected a InvalidParemeterException function returned a NullPointerException|
+| org.jfree.DataUtilities | createNumberArray | Testing if a valid double array will be returned as Number Object Array| Pass |
+| org.jfree.DataUtilities | createNumberArray | Testing using a null object | Failed:  Expected a InvalidParameterException function returned an IllegalArgumentException |
+| org.jfree.DataUtilities | createNumberArray2D | Testing if valid 2D double array will be returned as a 2D Number object array | Pass |
+| org.jfree.DataUtilities | createNumberArray2D | Testing using a null object | Failed: Expected a InvalidParameterException function returned an IllegalArgumentException|
+| org.jfree.DataUtilities | getCumulativePercentages | Testing using mocking a valid KeyedValued object with valid inputs | Failed: Expected 0.3125 but received 0.454545 |
+| org.jfree.DataUtilities | getCumulativePercentages | Testing using a null object | Failed:  Expected a InvalidParameterException function returned an IllegalArgumentException|
 
-Text…
-
-// write down the name of the test methods and classes. Organize the based on
-the source code method // they test. identify which tests cover which partitions
-you have explained in the test strategy section //above
 
 # 4 How the team work/effort was divided and managed
 
-Text…
 
 # 5 Difficulties encountered, challenges overcome, and lessons learned
 
-Text…
-
 # 6 Comments/feedback on the lab itself
-
-Text…
