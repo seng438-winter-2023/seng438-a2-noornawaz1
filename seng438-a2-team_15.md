@@ -2,7 +2,7 @@
 
 **Lab. Report \#2 – Requirements-Based Test Generation**
 
-|   Group \#:      |     |
+|   Group \#:      |  UCID  |
 | ---------------- | --- |
 |   Student Names: |     |
 |    Sajan Hayer   |     |
