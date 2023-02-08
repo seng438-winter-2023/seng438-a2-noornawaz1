@@ -5,8 +5,8 @@
 |   Group \#:      |  UCID  |
 | ---------------- | --- |
 |   Student Names: |     |
-|    Sajan Hayer   |     |
-|   Manraj Singh   |     |
+|    Sajan Hayer   |  30114632   |
+|   Manraj Singh   |  30115660   |
 |    Noor Nawaz    |  30118937   |
 | Ahmad Elshiltawi |  30123883   |
 
