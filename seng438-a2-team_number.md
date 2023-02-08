@@ -53,8 +53,9 @@ Figure 1: Results of Testing
 
 
 # 4 How the team work/effort was divided and managed
-
+Initially, all group members worked together to read documentation and gain a deeper understanding of the SUT. After familiarizing themselves, Noor and Ahmad developed test cases for the Range class and Sajan and Manraj wrote test cases for the DataUtilities class. All group members talked about test results after execution to analyze results.
 
 # 5 Difficulties encountered, challenges overcome, and lessons learned
+A challenge that was encountered during this lab was we realized that mocking would not allow us to fully implement some of the tests we had thought of. This was because when we tried to send a invalid value to the function, the code would throw an error stating that the value did not exist within our mocked table. The solution would be to add the specified value (row or column) within our table but that would result in the test passing. This resulted in our group having to remove these tests (these are commented out in our code). 
 
 # 6 Comments/feedback on the lab itself
