@@ -11,7 +11,7 @@
 | Ahmad Elshiltawi |  30123883   |
 
 # 1 Introduction
-In this lab, we were asked to develop tests in the JUnit framework for two given classes: Range and DataUtilties. By doing so, we were able to develop a good understanding of automated unit testing through JUnit. Since we were only provided with JAR files and no source code, we had to execute black-box testing methods such as equivalence testing when designing a test suite. For the Range class, we tested the methods constrain(), contains(), shift(), intersects(), combine(), getUpperBound(), and getLowerBound(). We began testing by first documenting the functionalities of each method and then constructing tests that would verify that the value returned by the methods was equivalent to the one that we hardcoded. For testing the DataUtilties() class, we tested the methods calculateColumnTotal(), calculateRowTotal(), createNumberArray(), createNumberArray2D(), and getCumilativePercentages(). These methods use the interfaces Values2D and KeyedValues so we had to utilize mocking objects in order to complete thorough and accurate testing. We examined the methods functionalities and hardcoded values that the methods would return if they were operating correctly. Once we ran the method, we compared it to the values produced by the test. Additionally, we constructed tests to ensure that the correct exceptions were thrown. The results of all the tests were recorded in Figure 1. 
+In this lab, we were asked to develop tests in the JUnit framework for two given classes: Range and DataUtilties. By doing so, we were able to develop a good understanding of automated unit testing through JUnit. Since we were only provided with JAR files and no source code, we had to execute black-box testing methods such as equivalence testing when designing a test suite. For the Range class, we tested the methods constrain(), contains(), shift(), intersects(), combine(), getUpperBound(), and getLowerBound(). We began testing by first documenting the functionalities of each method and then constructing tests that would verify that the value returned by the methods was equivalent to the one that we hardcoded. For testing the DataUtilties() class, we tested the methods calculateColumnTotal(), calculateRowTotal(), createNumberArray(), createNumberArray2D(), and getCumilativePercentages(). These methods use the interfaces Values2D and KeyedValues so we had to utilize mocking objects in order to complete thorough and accurate testing. We examined the methods functionalities and hardcoded values that the methods would return if they were operating correctly. Once we ran the method, we compared it to the values produced by the test. Additionally, we constructed tests to ensure that the correct exceptions were thrown. The results of all the tests were recorded in Figure 1 and Figure 2. 
 
 # 2 Detailed description of unit test strategy
 To test the Range and DataUtilities classes using the black-box testing method, we further used equivalence testing to develop test cases. Equivalence testing allows us to test a single unit (generally a class) by separating the possible inputs into subgroups that have the same/similar input. Equivalence classes are evaluated based on the input conditions. 
@@ -23,7 +23,7 @@ The test suite that targeted the methods of the Range class also consisted of te
 Black box testing allowed us to focus on the core functionality of the system without thoroughly considering the internal code and inner works of the SUT. This allowed us to test a system from end-to-end and put us in the shoes of regular users that use the application.
 
 # 3 Test cases developed
-Figure 1: Results of Testing
+Figure 1: Results of Testing Range Class
 | Class | Function | Test description | Pass/Fail |
 |---------|-------|---------|---------|
 | org.jfree.Range | contains | Testing a positive number that is inside the range| Pass |
@@ -40,6 +40,11 @@ Figure 1: Results of Testing
 | org.jfree.Range | combine | Testing combining two null ranges | Pass |
 | org.jfree.Range | getLowerBound | Testing the value returned| Pass |
 | org.jfree.Range | getUpperBound | Testing the value returned| Failed:java.lang.AssertionError: expected:<1.0> but was:<-1.0> |
+
+
+Figure 2: Results of Testing DataUtilities Class
+| Class | Function | Test description | Pass/Fail |
+|---------|-------|---------|---------|
 | org.jfree.DataUtilities | calculateColumnTotal | Using Mocking, testing if a valid column within a table will return the correct amount (sum of all column values) | Pass |
 | org.jfree.DataUtilities | calculateColumnTotal | Testing using a null object | Failed: Expected a InvalidParemeterException function returned a NullPointerException |
 | org.jfree.DataUtilities | calculateRowTotal | Using Mocking testing if the sum of valid row within a table returns the correct value | Failed: Expected 9.5 but function returned 7.0|
@@ -47,9 +52,15 @@ Figure 1: Results of Testing
 | org.jfree.DataUtilities | calculateRowTotal | Using Mocking testing if the sum of row with all negative data entries within a table returns the correct value | Failed:  Expected -8, but the value returned was -4.|
 | org.jfree.DataUtilities | calculateRowTotal | Using Mocking testing if the sum of row with all data entries equal to zero within a table returns the correct value|Pass|
 | org.jfree.DataUtilities | createNumberArray | Testing if a valid double array will be returned as Number Object Array| Pass |
-| org.jfree.DataUtilities | createNumberArray | Testing using a null object | Failed:  Expected a InvalidParameterException function returned an IllegalArgumentException |
+| org.jfree.DataUtilities | createNumberArray2D | Testing that the method returns a Number[] array with correct values using positive numbers | Fail: arrays first differed at element[4]; expected 5.5 but was null|
+| org.jfree.DataUtilities | createNumberArray2D | Testing that the method returns a Number[] array with correct values using negative numbers | Fail: arrays first differed at element[2]; expected -1.0 but was null|
+| org.jfree.DataUtilities | createNumberArray2D | Testing that the method returns a Number[] array with correct values using zero's | Fail: arrays first differed at element[2]; expected 0.0 but was null|
+| org.jfree.DataUtilities | createNumberArray | Testing that the correct exception is thrown when using null | Failed:  Expected a InvalidParameterException, function returned an IllegalArgumentException |
 | org.jfree.DataUtilities | createNumberArray2D | Testing if valid 2D double array will be returned as a 2D Number object array | Pass |
-| org.jfree.DataUtilities | createNumberArray2D | Testing using a null object | Failed: Expected a InvalidParameterException function returned an IllegalArgumentException|
+| org.jfree.DataUtilities | createNumberArray2D | Testing that the method returns a Number[][] array with correct values using positive numbers | Fail: arrays first differed at element[0][1]; expected 1.0 but was null|
+| org.jfree.DataUtilities | createNumberArray2D | Testing that the method returns a Number[][] array with correct values using negative numbers | Fail: arrays first differed at element[0][1]; expected -1.0 but was null |
+| org.jfree.DataUtilities | createNumberArray2D | Testing that the method returns a Number[][] array with correct values using zero's | Fail: arrays first differed at element[0][1]; expected 0.0 but was null |
+| org.jfree.DataUtilities | createNumberArray2D | Testing that the correct exception is thrown | Failed: Expected a InvalidParameterException function returned an IllegalArgumentException|
 | org.jfree.DataUtilities | getCumulativePercentages | Testing using mocking a valid KeyedValued object with valid inputs | Failed: Expected 0.3125 but received 0.454545 |
 | org.jfree.DataUtilities | getCumulativePercentages | Testing using a null object | Failed:  Expected a InvalidParameterException function returned an IllegalArgumentException|
 
