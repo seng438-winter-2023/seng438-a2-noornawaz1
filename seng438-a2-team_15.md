@@ -44,6 +44,8 @@ Figure 1: Results of Testing
 | org.jfree.DataUtilities | calculateColumnTotal | Testing using a null object | Failed: Expected a InvalidParemeterException function returned a NullPointerException |
 | org.jfree.DataUtilities | calculateRowTotal | Using Mocking testing if the sum of valid row within a table returns the correct value | Failed: Expected 9.5 but function returned 7.0|
 | org.jfree.DataUtilities | calculateRowTotal | Testing using a null object | Failed:  Expected a InvalidParemeterException function returned a NullPointerException|
+| org.jfree.DataUtilities | calculateRowTotal | Using Mocking testing if the sum of row with all negative data entries within a table returns the correct value | Failed:  Expected -8, but the value returned was -4.|
+| org.jfree.DataUtilities | calculateRowTotal | Using Mocking testing if the sum of row with all data entries equal to zero within a table returns the correct value|Pass|
 | org.jfree.DataUtilities | createNumberArray | Testing if a valid double array will be returned as Number Object Array| Pass |
 | org.jfree.DataUtilities | createNumberArray | Testing using a null object | Failed:  Expected a InvalidParameterException function returned an IllegalArgumentException |
 | org.jfree.DataUtilities | createNumberArray2D | Testing if valid 2D double array will be returned as a 2D Number object array | Pass |
