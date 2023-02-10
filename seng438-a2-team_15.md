@@ -22,6 +22,8 @@ The test suite that targeted the methods of the Range class also consisted of te
 
 Black box testing allowed us to focus on the core functionality of the system without thoroughly considering the internal code and inner works of the SUT. This allowed us to test a system from end-to-end and put us in the shoes of regular users that use the application.
 
+Mocking is beneficial because it allows us to create external or internal objects and isolate/focus on the code being tested, rather then external dependencies, thus increasing efficiency during the software testing process. Mocking may also increase the speed of tests because accessing objects/data may be a slow operation. Furthermore, mocking also allows us to quickly create reproduceable states of a system, therefore allowing more accurate tests. A drawback of mocking could be that it may not accurately reflect the entire state of a system, and prevents developers from being able to understand the effect of change on a system.
+
 # 3 Test cases developed
 Figure 1: Results of Testing Range Class
 | Class | Function | Test description | Pass/Fail |
