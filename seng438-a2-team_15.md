@@ -52,9 +52,9 @@ Figure 2: Results of Testing DataUtilities Class
 | org.jfree.DataUtilities | calculateRowTotal | Using Mocking testing if the sum of row with all negative data entries within a table returns the correct value | Failed:  Expected -8, but the value returned was -4.|
 | org.jfree.DataUtilities | calculateRowTotal | Using Mocking testing if the sum of row with all data entries equal to zero within a table returns the correct value|Pass|
 | org.jfree.DataUtilities | createNumberArray | Testing if a valid double array will be returned as Number Object Array| Pass |
-| org.jfree.DataUtilities | createNumberArray2D | Testing that the method returns a Number[] array with correct values using positive numbers | Fail: arrays first differed at element[4]; expected 5.5 but was null|
-| org.jfree.DataUtilities | createNumberArray2D | Testing that the method returns a Number[] array with correct values using negative numbers | Fail: arrays first differed at element[2]; expected -1.0 but was null|
-| org.jfree.DataUtilities | createNumberArray2D | Testing that the method returns a Number[] array with correct values using zero's | Fail: arrays first differed at element[2]; expected 0.0 but was null|
+| org.jfree.DataUtilities | createNumberArray | Testing that the method returns a Number[] array with correct values using positive numbers | Fail: arrays first differed at element[4]; expected 5.5 but was null|
+| org.jfree.DataUtilities | createNumberArray | Testing that the method returns a Number[] array with correct values using negative numbers | Fail: arrays first differed at element[2]; expected -1.0 but was null|
+| org.jfree.DataUtilities | createNumberArray | Testing that the method returns a Number[] array with correct values using zero's | Fail: arrays first differed at element[2]; expected 0.0 but was null|
 | org.jfree.DataUtilities | createNumberArray | Testing that the correct exception is thrown when using null | Failed:  Expected a InvalidParameterException, function returned an IllegalArgumentException |
 | org.jfree.DataUtilities | createNumberArray2D | Testing if valid 2D double array will be returned as a 2D Number object array | Pass |
 | org.jfree.DataUtilities | createNumberArray2D | Testing that the method returns a Number[][] array with correct values using positive numbers | Fail: arrays first differed at element[0][1]; expected 1.0 but was null|
