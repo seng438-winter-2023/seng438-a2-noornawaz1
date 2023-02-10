@@ -45,8 +45,10 @@ Figure 1: Results of Testing Range Class
 Figure 2: Results of Testing DataUtilities Class
 | Class | Function | Test description | Pass/Fail |
 |---------|-------|---------|---------|
-| org.jfree.DataUtilities | calculateColumnTotal | Using Mocking, testing if a valid column within a table will return the correct amount (sum of all column values) | Pass |
-| org.jfree.DataUtilities | calculateColumnTotal | Testing using a null object | Failed: Expected a InvalidParemeterException function returned a NullPointerException |
+| org.jfree.DataUtilities | calculateColumnTotal | Testing that the correct value is returned using positive numbers in the table | Pass |
+| org.jfree.DataUtilities | calculateColumnTotal | Testing that the correct value is returned using negative numbers in the table | Pass |
+| org.jfree.DataUtilities | calculateColumnTotal | Testing that the correct value is returned using zero's in the table | Pass |
+| org.jfree.DataUtilities | calculateColumnTotal | Testing that the correct exception is thrown | Failed: Expected a InvalidParemeterException function returned a NullPointerException |
 | org.jfree.DataUtilities | calculateRowTotal | Using Mocking testing if the sum of valid row within a table returns the correct value | Failed: Expected 9.5 but function returned 7.0|
 | org.jfree.DataUtilities | calculateRowTotal | Testing using a null object | Failed:  Expected a InvalidParemeterException function returned a NullPointerException|
 | org.jfree.DataUtilities | calculateRowTotal | Using Mocking testing if the sum of row with all negative data entries within a table returns the correct value | Failed:  Expected -8, but the value returned was -4.|
@@ -62,11 +64,12 @@ Figure 2: Results of Testing DataUtilities Class
 | org.jfree.DataUtilities | createNumberArray2D | Testing that the method returns a Number[][] array with correct values using zero's | Fail: arrays first differed at element[0][1]; expected 0.0 but was null |
 | org.jfree.DataUtilities | createNumberArray2D | Testing that the correct exception is thrown | Failed: Expected a InvalidParameterException function returned an IllegalArgumentException|
 | org.jfree.DataUtilities | getCumulativePercentages | Testing using mocking a valid KeyedValued object with valid inputs | Failed: Expected 0.3125 but received 0.454545 |
+| org.jfree.DataUtilities | getCumulativePercentages | Testing using mocking a valid KeyedValued object a value equal to zero | Pass|
 | org.jfree.DataUtilities | getCumulativePercentages | Testing using a null object | Failed:  Expected a InvalidParameterException function returned an IllegalArgumentException|
 
 
 # 4 How the team work/effort was divided and managed
-Initially, all group members worked together to read documentation and gain a deeper understanding of the SUT. After familiarizing themselves, Noor and Ahmad developed test cases for the Range class and Sajan and Manraj wrote test cases for the DataUtilities class. All group members talked about test results after execution to analyze results.
+Initially, all group members worked together to read documentation and gain a deeper understanding of the SUT. After familiarizing themselves, Noor and Ahmad developed test cases for the Range class and Sajan, Manraj, and Noor wrote test cases for the DataUtilities class. All group members talked about test results after execution to analyze results.
 
 # 5 Difficulties encountered, challenges overcome, and lessons learned
 A challenge that was encountered during this lab was we realized that mocking would not allow us to fully implement some of the tests we had thought of. This was because when we tried to send a invalid value to the function, the code would throw an error stating that the value did not exist within our mocked table. The solution would be to add the specified value (row or column) within our table but that would result in the test passing. This resulted in our group having to remove these tests (these are commented out in our code). 
